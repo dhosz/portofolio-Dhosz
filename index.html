@@ -1,212 +1,137 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Saya</title>
+    <title>Neo Portfolio | Futuristic Dark</title>
+    <!-- Link ke file CSS eksternal -->
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome untuk ikon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Font Awesome untuk ikon (opsional tapi bagus) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Navigasi -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">Portfolio</div>
-            <ul class="nav-menu">
-                <li><a href="#home">Beranda</a></li>
-                <li><a href="#about">Tentang</a></li>
-                <li><a href="#skills">Keahlian</a></li>
-                <li><a href="#projects">Proyek</a></li>
-                <li><a href="#contact">Kontak</a></li>
+
+    <!-- Canvas untuk Background Animasi (JavaScript) -->
+    <canvas id="bgCanvas"></canvas>
+
+    <!-- Konten Utama -->
+    <div class="container">
+
+        <!-- Header / Navbar -->
+        <nav>
+            <div class="logo">&lt;Dev_Aurora/&gt;</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+        </nav>
 
-    <!-- Home Section -->
-    <section id="home" class="home">
-        <div class="home-content">
-            <div class="home-text">
-                <h1>Halo, Saya <span class="highlight">Nama Anda</span></h1>
-                <p class="profession">Web Developer & Designer</p>
-                <p class="description">Saya seorang pengembang web kreatif yang berfokus pada pembuatan website modern dan responsif.</p>
+        <!-- Section Home -->
+        <section id="home" class="section home-section">
+            <div class="home-content">
+                <h1 class="glitch" data-text="Futuristic Dev">Futuristic Dev</h1>
+                <p class="subtitle">Membangun realitas digital dengan <span class="neon-text">kode futuristik</span>.</p>
                 <div class="cta-buttons">
-                    <a href="#projects" class="btn primary">Lihat Proyek</a>
-                    <a href="#contact" class="btn secondary">Hubungi Saya</a>
+                    <a href="#projects" class="btn primary">Lihat Karya <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn secondary">Kolaborasi</a>
                 </div>
             </div>
-            <div class="home-image">
-                <div class="image-placeholder">
-                    <i class="fas fa-user-circle"></i>
-                </div>
+            <div class="scroll-indicator">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">Tentang Saya</h2>
+        <!-- Section About -->
+        <section id="about" class="section about-section">
+            <h2 class="section-title">/ About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Saya adalah seorang pengembang web dengan pengalaman dalam menciptakan website yang menarik dan fungsional. Saya percaya bahwa desain yang baik dapat membuat perbedaan besar dalam pengalaman pengguna.</p>
-                    <p>Dengan latar belakang di bidang desain dan pengembangan, saya dapat membantu mewujudkan ide-ide Anda menjadi website yang menakjubkan.</p>
-                    <div class="personal-info">
-                        <div class="info-item">
-                            <span class="info-title">Nama:</span>
-                            <span class="info-value">Nama Anda</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-title">Email:</span>
-                            <span class="info-value">email@anda.com</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-title">Lokasi:</span>
-                            <span class="info-value">Jakarta, Indonesia</span>
-                        </div>
+                    <p>Saya adalah arsitek digital yang tinggal di persimpangan antara <span class="neon-text">desain</span> dan <span class="neon-text">algoritma</span>. Dengan latar belakang di bidang kecerdasan buatan dan antarmuka pengguna, saya menciptakan pengalaman yang imersif dan responsif.</p>
+                    <p><i class="fas fa-code neon-icon"></i> Spesialisasi: React, Three.js, dan Motion Design.</p>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="5">0</span>
+                        <span class="stat-label">Tahun Eksplorasi</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="20">0</span>
+                        <span class="stat-label">Proyek Futuristik</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="15">0</span>
+                        <span class="stat-label">Klien Global</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Keahlian Saya</h2>
-            <div class="skills-content">
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">HTML & CSS</span>
-                        <span class="skill-percentage">90%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" data-progress="90"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">JavaScript</span>
-                        <span class="skill-percentage">85%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" data-progress="85"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">React.js</span>
-                        <span class="skill-percentage">80%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" data-progress="80"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">UI/UX Design</span>
-                        <span class="skill-percentage">75%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" data-progress="75"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Proyek Terbaru</h2>
+        <!-- Section Projects -->
+        <section id="projects" class="section projects-section">
+            <h2 class="section-title">/ Featured Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-laptop-code"></i>
+                    <div class="card-glow"></div>
+                    <h3>Neo Dashboard</h3>
+                    <p>UI/UX untuk sistem kontrol satelit dengan visualisasi data real-time.</p>
+                    <div class="tech-tags">
+                        <span>React</span>
+                        <span>D3.js</span>
+                        <span>Socket.io</span>
                     </div>
-                    <h3>Proyek 1</h3>
-                    <p>Deskripsi singkat tentang proyek pertama Anda.</p>
-                    <div class="project-links">
-                        <a href="#" class="btn-small">Demo</a>
-                        <a href="#" class="btn-small">Kode</a>
-                    </div>
+                    <a href="#" class="card-link">Jelajahi <i class="fas fa-external-link-alt"></i></a>
                 </div>
                 <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-mobile-alt"></i>
+                    <div class="card-glow"></div>
+                    <h3>AI Companion</h3>
+                    <p>Asisten virtual dengan persona holografik dan pemrosesan bahasa alami.</p>
+                    <div class="tech-tags">
+                        <span>TensorFlow</span>
+                        <span>Electron</span>
+                        <span>WebGL</span>
                     </div>
-                    <h3>Proyek 2</h3>
-                    <p>Deskripsi singkat tentang proyek kedua Anda.</p>
-                    <div class="project-links">
-                        <a href="#" class="btn-small">Demo</a>
-                        <a href="#" class="btn-small">Kode</a>
-                    </div>
+                    <a href="#" class="card-link">Jelajahi <i class="fas fa-external-link-alt"></i></a>
                 </div>
                 <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-code"></i>
+                    <div class="card-glow"></div>
+                    <h3>Cyberspace</h3>
+                    <p>Ruang kolaborasi 3D berbasis browser untuk tim jarak jauh.</p>
+                    <div class="tech-tags">
+                        <span>Three.js</span>
+                        <span>WebRTC</span>
+                        <span>Blender</span>
                     </div>
-                    <h3>Proyek 3</h3>
-                    <p>Deskripsi singkat tentang proyek ketiga Anda.</p>
-                    <div class="project-links">
-                        <a href="#" class="btn-small">Demo</a>
-                        <a href="#" class="btn-small">Kode</a>
-                    </div>
+                    <a href="#" class="card-link">Jelajahi <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Hubungi Saya</h2>
+        <!-- Section Contact -->
+        <section id="contact" class="section contact-section">
+            <h2 class="section-title">/ Contact</h2>
             <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <h3>Email</h3>
-                        <p>email@anda.com</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <h3>Telepon</h3>
-                        <p>+62 812 3456 7890</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h3>Alamat</h3>
-                        <p>Jakarta, Indonesia</p>
-                    </div>
+                <p>Kirim sinyal ke galaksi saya.</p>
+                <a href="mailto:hello@aurora.tech" class="neon-email">hello@aurora.tech</a>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
-                <form class="contact-form" id="contactForm">
-                    <input type="text" placeholder="Nama Anda" required>
-                    <input type="email" placeholder="Email Anda" required>
-                    <textarea placeholder="Pesan Anda" rows="5" required></textarea>
-                    <button type="submit" class="btn primary">Kirim Pesan</button>
-                </form>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
-            <p>&copy; 2024 Nama Anda. All rights reserved.</p>
-        </div>
-    </footer>
+        <!-- Footer -->
+        <footer>
+            <p>© 2024 Dirancang dengan <span class="neon-heart">❤️</span> di Bumi, Sinyal dikirim ke luar angkasa.</p>
+        </footer>
+    </div>
 
+    <!-- Link ke file JavaScript eksternal -->
     <script src="script.js"></script>
 </body>
-                      </html>
+                </html>
